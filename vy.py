@@ -2,6 +2,8 @@ from flask import Flask, render_template, redirect, url_for
 from flask import request
 import simpleaudio
 import os
+from playsound import playsound
+import threading
 
 # create flask application to manage routes
 app = Flask(__name__)
@@ -24,17 +26,9 @@ def play_sound(filename):
                 True when it is playing.
             """
     try:
-        # The WaveObject represents the audio file specified by the filename.
-        # It is responsible for playing the sound.
-        wave_obj = simpleaudio.WaveObject.from_wave_file(filename)
-        path = "/Vy-Gallery.com"
-        if request.path == path:
-            wave_obj.play()
-    # catching exceptions while playing song
-    except FileNotFoundError as e:
-        print(f"file not found: {e}")
+        playsound(filename)
     except Exception as e:
-        print(f"Error while playing {e}")
+        print(f"Error while playing {filename}: {e}")
 
 
 # home route - displaying front page with start button
@@ -47,8 +41,10 @@ def start_page():
 @app.route("/Vy-Gallery.com")
 def gallery_page():
     path = "/Vy-Gallery.com"
-    if request.path == path:  # only play song if at this route
-        play_sound(os.environ.get("SOUND_PATH"))
+    sound_file = "static/Gravity.mp3"
+    if request.path == path:
+        threading.Thread(target=playsound, args=(sound_file,), daemon=True).start()
+
     return render_template("homepage.html")
 
 
