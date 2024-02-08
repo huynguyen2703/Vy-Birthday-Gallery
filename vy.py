@@ -48,20 +48,9 @@ def start_page():
 def gallery_page():
     path = "/Vy-Gallery.com"
     if request.path == path:  # only play song if at this route
-        root_path = os.path.dirname(os.path.abspath(__file__))
-        wav_file_path = os.path.join(root_path, 'static', 'Gravity.wav')
-        return render_template("homepage.html", music_path=wav_file_path)
+        play_sound("Gravity.wav")
     return render_template("homepage.html")
 
-
-@app.route('/play_audio')
-def play_audio():
-    # Dynamically generate the absolute path to the audio file
-    root_path = os.path.dirname(os.path.abspath(__file__))
-    wav_file_path = os.path.join(root_path, 'static', 'Gravity.wav')
-
-    # Play the audio using send_file
-    return send_file(wav_file_path, as_attachment=False)
 
 
 # story route - display story blog posts
