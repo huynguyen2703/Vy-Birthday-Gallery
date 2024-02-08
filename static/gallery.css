@@ -1,0 +1,274 @@
+@import url("https://fonts.cdnfonts.com/css/story-telling");
+@import url('https://fonts.cdnfonts.com/css/huntrela');
+
+
+html {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 280%;
+}
+
+p {
+    font-size: 210%;
+    line-height: 150%;
+    font-family: "Story Telling", sans-serif;
+
+
+}
+
+.slide {
+    position: relative;
+    padding: 25vh 10%;
+    min-height: 200vh;
+    width: 100vw;
+    box-sizing: border-box;
+    box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.7);
+    transform-style: inherit;
+}
+
+#slide4 img {
+    width: 100px;
+    height: 100px;
+}
+
+img {
+    position: absolute;
+    top: 60%;
+    left: 35%;
+    width: 320px;
+    height: 240px;
+    transform: translateZ(0.25px) scale(0.75) translateX(-94%) translateY(-100%) rotate(2deg);
+    padding: 10px;
+    border-radius: 5px;
+    background: rgba(240, 230, 220, 0.7);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+}
+
+img:last-of-type {
+    transform: translateZ(0.4px) scale(0.6) translateX(-104%) translateY(-40%) rotate(-5deg);
+}
+
+.slide:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.7);
+}
+
+.title {
+    width: 50%;
+    padding: 5%;
+    border-radius: 5px;
+    background: rgba(240, 230, 220, 0.7);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+    font-family: "Story Telling", sans-serif;
+}
+
+.slide:nth-child(2n) .title {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.slide:nth-child(2n + 1) .title {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.slide,
+.slide:before {
+    background: 50% 50% / cover;
+}
+
+@keyframes glowing {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.8);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+        0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.8);
+    }
+}
+
+.header h1 {
+    position: relative;
+    text-align: center;
+    height: 100px;
+    font-size: 4.8cm;
+    top: 100px;
+    letter-spacing: 22px;
+    font-family: "Story Telling", sans-serif;
+    color: #4dffc4;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.8);
+    font-weight: bold;
+    animation: glowing 2s infinite; /* Adjust the duration as needed */
+}
+
+#title {
+    background-image: url("/static/images/Vy-5.jpg");
+    z-index: 2;
+}
+
+#slide2 .title {
+    position: relative;
+    left: 150px;
+    top: -40px;
+}
+
+#slide2 .title p {
+    font-family: "Story Telling", sans-serif;
+}
+
+#slide3 .title {
+    position: relative;
+    left: -150px;
+    top: -100px;
+}
+
+#slide5 .title {
+    position: relative;
+    left: 50%;
+    top: -200px;
+}
+
+#title h1 {
+    transform: translateZ(0.25px) scale(0.75);
+    transform-origin: 50% 100%;
+}
+
+#slide1:before {
+    background-image: url("/static/images/Vy-7.jpg");
+    transform: translateZ(-1px) scale(2);
+}
+
+#slide2 {
+    background-image: url("/static/images/Vy-10.png");
+    z-index: 2;
+}
+
+#slide2 img {
+    width: 220px;
+    height: auto;
+}
+
+#slide3:before {
+    background-image: url("/static/images/Vy-6.jpg");
+    transform: translateZ(-1px) scale(2);
+}
+
+#slide3 img {
+    width: 220px;
+    height: auto;
+}
+
+#slide3 img:nth-of-type(1) {
+    transform: translateZ(0.4px) scale(0.6) translateX(900px) translateY(-400%) rotate(10deg);
+}
+
+#slide3 img:nth-of-type(2) {
+    transform: translateZ(0.4px) scale(0.6) translateX(1000px) translateY(-280%) rotate(-5deg);
+}
+
+#slide3 img:nth-of-type(3) {
+    transform: translateZ(0.4px) scale(0.6) translateX(850px) translateY(-140%) rotate(3deg);
+}
+
+#slide3 img:nth-of-type(4) {
+    transform: translateZ(0.4px) scale(0.6) translateX(1000px) translateY(-10%) rotate(-6deg);
+    height: 18%;
+}
+
+#slide3 img:nth-of-type(5) {
+    transform: translateZ(0.4px) scale(0.6) translateX(750px) translateY(100%) rotate(10deg);
+    height: 20%;
+}
+
+#slide4 {
+    background-image: url("/static/images/Vy-21.png");
+    z-index: 2;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#slide4 #transition {
+    position: relative;
+    text-align: center;
+    top: 400px;
+    font-family: "Story Telling", sans-serif;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 7cm;
+    color: #ffce00;
+    border: 3px solid #ffdc73;
+    padding: 32px;
+    display: inline-block;
+    background-color: rgba(255, 220, 115, 0.5);
+    border-radius: 100px;
+
+}
+
+#slide5:before {
+    background-image: url("/static/images/Vy-9.png");
+    transform: translateZ(-1px) scale(2);
+}
+
+#slide5:before {
+    background-image: url("/static/images/Vy-9.png");
+    transform: translateZ(-1px) scale(2);
+}
+
+#slide6 {
+    background-image: url("/static/images/Vy-22.jpg");
+    z-index: 2;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    word-spacing: 50px;
+}
+
+
+.waviy span {
+    position: relative;
+    display: inline-block;
+    font-family: 'Huntrela', sans-serif;
+    font-size: 150px;
+    top: -500px;
+    animation: waviy 1s infinite;
+    animation-delay: calc(.1s * var(--i));
+}
+
+
+@keyframes waviy {
+    0%, 40%, 100% {
+        transform: translateY(0)
+    }
+    20% {
+        transform: translateY(-20px)
+    }
+}
