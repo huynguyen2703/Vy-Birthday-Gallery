@@ -4,7 +4,7 @@ import simpleaudio
 import os
 
 # create flask application to manage routes
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static', static_folder='static')
 
 
 def play_sound(filename):
