@@ -4,7 +4,7 @@ import simpleaudio
 import os
 
 # create flask application to manage routes
-app = Flask(__name__, static_url_path='/static', static_folder='static')
+app = Flask(__name__)
 
 
 def play_sound(filename):
@@ -48,9 +48,8 @@ def start_page():
 def gallery_page():
     path = "/Vy-Gallery.com"
     if request.path == path:  # only play song if at this route
-        play_sound("Gravity.wav")
+        play_sound(os.environ.get("SOUND_PATH"))
     return render_template("homepage.html")
-
 
 
 # story route - display story blog posts
