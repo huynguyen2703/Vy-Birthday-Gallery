@@ -1,1 +1,1 @@
-web: gunicorn vy :app
+web: gunicorn vy:app
