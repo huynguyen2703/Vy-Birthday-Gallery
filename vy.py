@@ -43,7 +43,6 @@ def gallery_page():
     sound_file = os.environ.get("SOUND_PATH")
     if request.path == path:
         threading.Thread(target=playsound, args=(sound_file,), daemon=True).start()
-
     return render_template("homepage.html")
 
 
