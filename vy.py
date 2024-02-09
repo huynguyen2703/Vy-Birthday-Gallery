@@ -3,6 +3,9 @@ from flask import request
 import os
 from playsound import playsound
 import threading
+from pydub import AudioSegment
+from pydub.playback import play
+
 
 # create flask application to manage routes
 app = Flask(__name__)
@@ -24,10 +27,14 @@ def play_sound(filename):
             Returns:
                 True when it is playing.
             """
-    try:
-        playsound(filename)
-    except Exception as e:
-        print(f"Error while playing {filename}: {e}")
+    # try:
+    #     playsound(filename)
+    # except Exception as e:
+    #     print(f"Error while playing {filename}: {e}")
+    AudioSegment.converter = "/usr/local/bin/ffmpeg"
+
+    song = AudioSegment.from_mp3(filename)
+    play(song)
 
 
 # home route - displaying front page with start button
