@@ -40,7 +40,7 @@ def start_page():
 @app.route("/Vy-Gallery.com")
 def gallery_page():
     path = "/Vy-Gallery.com"
-    sound_file = "static/Gravity.mp3"
+    sound_file = os.environ.get("SOUND_PATH")
     if request.path == path:
         threading.Thread(target=playsound, args=(sound_file,), daemon=True).start()
 
