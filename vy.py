@@ -1,6 +1,5 @@
 from flask import Flask, render_template, redirect, url_for
 from flask import request
-import simpleaudio
 import os
 from playsound import playsound
 import threading
